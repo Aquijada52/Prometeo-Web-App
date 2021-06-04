@@ -1,6 +1,6 @@
-# Prometeo Web App
+# Pyrrha Web App
 
-This repository contains the [Prometeo](https://github.com/Code-and-Response/Prometeo) solution web application dashboard for firefighters to view .
+This repository contains the [Pyrrha](https://github.com/Pyrrha-Platform/Pyrrha) solution web application dashboard for firefighters to view .
 
 This service wakes up every minute and calculates time weighted average exposures for all fire fighters and compares them to the configured limits.
 
@@ -35,15 +35,15 @@ You can run this solution locally in docker as follows
     ```
    2. run the image
     ```
-        docker run -p 3306:3306 --name prometeo-mariadb -e MYSQL_ROOT_PASSWORD='' -d mariadb
+        docker run -p 3306:3306 --name pyrrha-mariadb -e MYSQL_ROOT_PASSWORD='' -d mariadb
         FYI: MYSQL_ROOT_PASSWORD is the initial password you want to set for the db login
     ```
    3. Test the image by logging into the container once it is running
     ```
-    docker exec -it prometeo-mariadb mysql -uroot -p
+    docker exec -it pyrrha-mariadb mysql -uroot -p
     FYI: This command might also useful for loading the dump
     ```
-   4. Use the prometeo.sql and procedure.sql to dump into the new database to get the initial framework set from https://github.com/Code-and-Response/Prometeo-Database
+   4. Use the pyrrha.sql and procedure.sql to dump into the new database to get the initial framework set from https://github.com/Pyrrha-Platform/Pyrrha-Database
 
 
 3. Create python virtual environment
@@ -93,13 +93,13 @@ You can run this solution locally in docker as follows
     [2020-09-23 18:02:12 +0000] [9] [INFO] Listening at: http://0.0.0.0:3000 (9)
     [2020-09-23 18:02:12 +0000] [9] [INFO] Using worker: sync
     [2020-09-23 18:02:12 +0000] [12] [INFO] Booting worker with pid: 12
-    INFO:prometeo.fuel_types.fuelTypes:creating an instance of fuelTypes
-    INFO:prometeo.fuel_types.fuelTypes:calling the stored procedure
-    DEBUG:prometeo.fuel_types.fuelTypes:there is data:
-    DEBUG:prometeo.fuel_types.fuelTypes:(1, 'Pinar', None)
-    DEBUG:prometeo.fuel_types.fuelTypes:(2, 'Matojo', None)
-    DEBUG:prometeo.fuel_types.fuelTypes:(3, 'Campo de trigo', None)
-    DEBUG:prometeo.status.status_webapp:creating an instance of status
+    INFO:pyrrha.fuel_types.fuelTypes:creating an instance of fuelTypes
+    INFO:pyrrha.fuel_types.fuelTypes:calling the stored procedure
+    DEBUG:pyrrha.fuel_types.fuelTypes:there is data:
+    DEBUG:pyrrha.fuel_types.fuelTypes:(1, 'Pinar', None)
+    DEBUG:pyrrha.fuel_types.fuelTypes:(2, 'Matojo', None)
+    DEBUG:pyrrha.fuel_types.fuelTypes:(3, 'Campo de trigo', None)
+    DEBUG:pyrrha.status.status_webapp:creating an instance of status
     get_allstatus - entro en la funcion
     get_allstatus - llamada a sql
     get_allstatus - Hay informacion
@@ -107,7 +107,7 @@ You can run this solution locally in docker as follows
     (2, 'En curso', None)
     (3, 'Finalizado', None)
     (4, 'Cancelado', None)
-    DEBUG:prometeo.eventTypes.event_Types:creating an instance of eventTypes
+    DEBUG:pyrrha.eventTypes.event_Types:creating an instance of eventTypes
     get_alleventTypes - entro en la función
     get_alleventTypes - llamada a sql
     get_alleventTypes - Hay informacion
@@ -138,7 +138,7 @@ You can run this application on Kubernetes. The skaffold.yaml file let's you qui
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting Prometeo pull requests.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting Pyrrha pull requests.
 
 ## License
 
